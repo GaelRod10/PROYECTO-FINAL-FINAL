@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index.css"
+    <link rel="stylesheet" href="index.css">
 
 </head>
 <body>
-    <script src="index.js"></script>;
+    <script type="module" src="index.js"></script>
+    <div id="popup">
+        <div id="popup-content">
+          <h2>Controles</h2>
+          <ul>
+            <li><b>W:</b> Mover adelante</li>
+            <li><b>S:</b> Mover atrás</li>
+            <li><b>A:</b> Mover izquierda</li>
+            <li><b>D:</b> Mover derecha</li>
+            <li><b>Espacio:</b> Saltar</li>
+            <li><b>Clic:</b> Disparar proyectil</li>
+          </ul>
+          <button id="close-popup">Cerrar</button>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/controls/PointerLockControls.js"></script>
+      <script src="script.js"></script>
 </body>
 </html>
