@@ -30,12 +30,24 @@ scene.background = new THREE.Color(0x000000);  // Fondo de color cielo
 
 // Crear la cámara
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 5, 10);
+camera.position.set(0, 20, 20);
 
 // Crear el renderizador
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+// Ajustar el tamaño de la ventana automáticamente
+window.addEventListener('resize', () => {
+  // Actualizar el tamaño del renderizador
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  // Actualizar el aspecto de la cámara
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+});
+
 
 // Agregar controles de PointerLock
 const controls = new PointerLockControls(camera, renderer.domElement);
@@ -46,7 +58,7 @@ const moveSpeed = 0.1;
 const jumpSpeed = 0.2;
 const gravity = 0.01;
 const keys = { forward: false, backward: false, left: false, right: false };
-let isJumping = false;
+let isJumping = true;
 let velocityY = 0;
 
 // Configuración de Cannon.js

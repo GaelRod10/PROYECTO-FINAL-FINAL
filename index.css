@@ -1,5 +1,7 @@
 body{
     background-color: black;
+        margin: 0;
+    overflow: hidden;
 }
 /* Estilo del "pop-up" */
 #popup {
@@ -9,7 +11,7 @@ body{
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -47,3 +49,6 @@ body{
     background: #0056b3;
   }
   
+  body.popup-active {
+    overflow: hidden;
+}
